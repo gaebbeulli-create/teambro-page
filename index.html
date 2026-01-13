@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEAM BRO | 배민커넥트비즈+ 공식 중개사</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         @font-face{font-family:'BMHANNAPro';src:url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff') format('woff')}
         @font-face{font-family:'BMJUA';src:url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff')}
@@ -22,7 +21,7 @@
             --gradient-insta:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)
         }
         html{scroll-behavior:smooth}
-        body{font-family:'Pretendard','Noto Sans KR',sans-serif;background:var(--bg);color:var(--white);line-height:1.6;font-size:13px}
+        body{font-family:'Pretendard','BMJUA',sans-serif;background:var(--bg);color:var(--white);line-height:1.6;font-size:13px}
 
         ::-webkit-scrollbar{width:4px}
         ::-webkit-scrollbar-thumb{background:var(--mint);border-radius:10px}
@@ -44,7 +43,7 @@
         .nav-cta{background:var(--gradient-mint);color:#000;padding:10px 20px;border-radius:100px;font-family:'BMJUA',sans-serif;font-size:.85rem;text-decoration:none;transition:all .3s}
         .mobile-menu{display:none}
 
-        .hero{min-height:100vh;display:flex;align-items:center;padding:70px 16px 50px;position:relative}
+        .hero{min-height:100vh;display:flex;align-items:center;padding:70px 16px 50px;position:relative;overflow:hidden}
         .hero-bg{position:absolute;inset:0}
         .hero-bg::before{content:'';position:absolute;top:-20%;left:-10%;width:50%;height:50%;background:radial-gradient(circle,var(--mint-glow),transparent 60%);filter:blur(50px);animation:glow1 8s infinite}
         .hero-bg::after{content:'';position:absolute;bottom:-10%;right:-10%;width:40%;height:40%;background:radial-gradient(circle,var(--orange-glow),transparent 60%);filter:blur(50px);animation:glow2 8s infinite}
@@ -73,29 +72,13 @@
         .social-text{font-size:.95rem;color:var(--gray-400)}
         .social-text strong{color:#fff}
 
-        .story-card{position:relative;max-width:340px;margin:0 auto}
-        .story-card::before{content:'';position:absolute;inset:-2px;border-radius:16px;background:var(--gradient-insta);z-index:-1;animation:hue 5s linear infinite}
-        @keyframes hue{to{filter:hue-rotate(360deg)}}
-        .story-inner{background:var(--card);border-radius:20px;padding:16px}
-        .story-header{display:flex;align-items:center;gap:6px;margin-bottom:8px}
-        .story-avatar{width:40px;height:40px;border-radius:50%;background:var(--gradient-mint);display:flex;align-items:center;justify-content:center;font-family:'BMJUA',sans-serif;font-size:11px;color:#000}
-        .story-name{font-family:'BMJUA',sans-serif;font-size:.95rem}
-        .story-badge-text{font-size:.8rem;color:var(--mint)}
-        .story-more{margin-left:auto;color:var(--gray-500);font-size:.7rem}
-        .story-image{background:linear-gradient(145deg,#0f2a2a,#081818);border-radius:14px;padding:28px 16px;text-align:center;margin-bottom:12px}
-        .story-character{width:100%;max-width:160px;height:auto;filter:drop-shadow(0 10px 24px rgba(0,0,0,.5));animation:float 5s ease-in-out infinite}
-        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-        .story-stats{display:flex;justify-content:center;gap:14px;margin-top:10px}
-        .story-stat{text-align:center}
-        .story-stat-value{font-family:'BMEuljiro',sans-serif;font-size:1.3rem;color:var(--mint)}
-        .story-stat-label{font-size:.7rem;color:var(--gray-500)}
-        .story-actions{display:flex;align-items:center;gap:14px;padding:10px 0}
-        .story-action{font-size:1.3rem;cursor:pointer}
-        .story-action.liked{color:#ed4956}
-        .story-likes{font-family:'BMJUA',sans-serif;font-size:.95rem;margin-top:8px}
-        .story-caption{font-size:.85rem;color:var(--gray-400);margin-top:8px;line-height:1.6}
-        .story-caption strong{color:#fff}
-        .story-caption .tag{color:var(--mint)}
+        .hero-image{position:relative;display:flex;justify-content:center;align-items:center}
+        .hero-character{max-width:420px;width:100%;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5));animation:float 4s ease-in-out infinite;mix-blend-mode:lighten}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+        .hero-stats{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:16px;background:rgba(13,13,18,.9);backdrop-filter:blur(10px);padding:16px 28px;border-radius:16px;border:1px solid var(--card-border)}
+        .hero-stat{text-align:center}
+        .hero-stat-value{font-family:'BMEuljiro',sans-serif;font-size:1.5rem;color:var(--mint);text-shadow:0 0 15px var(--mint-glow)}
+        .hero-stat-label{font-size:.7rem;color:var(--gray-400);margin-top:2px}
 
         section{padding:50px 16px}
         .section-inner{max-width:900px;margin:0 auto}
@@ -191,8 +174,8 @@
         .footer-bottom{padding-top:16px;display:flex;justify-content:space-between;font-size:.65rem;color:var(--gray-500)}
         .footer-bottom a{color:var(--gray-500);text-decoration:none;margin-left:12px}
 
-        @media(max-width:900px){.hero-content,.split-grid,.contact-grid{grid-template-columns:1fr}.bento-grid{grid-template-columns:1fr 1fr}.bento-card.featured{grid-column:span 2}.rider-card{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr 1fr}}
-        @media(max-width:600px){.nav-links,.nav-cta{display:none}.mobile-menu{display:block;font-size:1rem;color:#fff}section{padding:40px 14px}.hero{padding:60px 14px 40px}.hero h1{font-size:1.4rem}.bento-grid,.process-grid{grid-template-columns:1fr}.bento-card.featured{grid-column:span 1}.form-row{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}.cta-buttons{flex-direction:column}}
+        @media(max-width:900px){.hero-content,.split-grid,.contact-grid{grid-template-columns:1fr}.bento-grid{grid-template-columns:1fr 1fr}.bento-card.featured{grid-column:span 2}.rider-card{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr 1fr}.hero-image{margin-top:40px}}
+        @media(max-width:600px){.nav-links,.nav-cta{display:none}.mobile-menu{display:block;font-size:1rem;color:#fff}section{padding:40px 14px}.hero{padding:60px 14px 40px}.hero h1{font-size:2rem}.hero-character{max-width:300px}.bento-grid,.process-grid{grid-template-columns:1fr}.bento-card.featured{grid-column:span 1}.form-row{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:8px;text-align:center}.cta-buttons{flex-direction:column}}
     </style>
 </head>
 <body>
@@ -235,29 +218,12 @@
                     <div class="social-text"><strong>150+</strong> 협력사가 함께해요</div>
                 </div>
             </div>
-            <div class="story-card">
-                <div class="story-inner">
-                    <div class="story-header">
-                        <div class="story-avatar">BRO</div>
-                        <div><div class="story-name">teambro_official</div><div class="story-badge-text">공식 중개사 ✓</div></div>
-                        <div class="story-more">•••</div>
-                    </div>
-                    <div class="story-image">
-                        <img src="teambro-character.png" alt="TEAM BRO" class="story-character">
-                        <div class="story-stats">
-                            <div class="story-stat"><div class="story-stat-value">150+</div><div class="story-stat-label">협력사</div></div>
-                            <div class="story-stat"><div class="story-stat-value">2K+</div><div class="story-stat-label">라이더</div></div>
-                            <div class="story-stat"><div class="story-stat-value">전국</div><div class="story-stat-label">서비스</div></div>
-                        </div>
-                    </div>
-                    <div class="story-actions">
-                        <span class="story-action liked">❤️</span>
-                        <span class="story-action">💬</span>
-                        <span class="story-action">📤</span>
-                        <span class="story-action" style="margin-left:auto">🔖</span>
-                    </div>
-                    <div class="story-likes">좋아요 2,847개</div>
-                    <div class="story-caption"><strong>teambro_official</strong> 배민커넥트비즈+ 공식 중개사 🚀<br><span class="tag">#팀브로</span> <span class="tag">#배민커넥트</span></div>
+            <div class="hero-image">
+                <img src="hero-character.png" alt="TEAM BRO" class="hero-character">
+                <div class="hero-stats">
+                    <div class="hero-stat"><div class="hero-stat-value">150+</div><div class="hero-stat-label">협력사</div></div>
+                    <div class="hero-stat"><div class="hero-stat-value">2K+</div><div class="hero-stat-label">라이더</div></div>
+                    <div class="hero-stat"><div class="hero-stat-value">전국</div><div class="hero-stat-label">서비스</div></div>
                 </div>
             </div>
         </div>
@@ -349,7 +315,7 @@
                 <div class="contact-list">
                     <div class="contact-item"><div class="contact-icon">📞</div><div><span>전화</span><strong>1660-3543</strong></div></div>
                     <div class="contact-item"><div class="contact-icon">✉️</div><div><span>이메일</span><strong>pro_5211@naver.com</strong></div></div>
-                    <div class="contact-item"><div class="contact-icon">🕐</div><div><span>운영</span><strong>09:00~08:00 (심야가능)</strong></div></div>
+                    <div class="contact-item"><div class="contact-icon">🕐</div><div><span>상담시간</span><strong>09:00~08:00 (심야가능)</strong></div></div>
                 </div>
             </div>
             <div class="contact-form">
